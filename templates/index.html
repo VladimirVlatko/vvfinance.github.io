@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" font-weight: bold;>
+        <tr id="bold">
+            <td>Symbol</td>
+            <td>Name</td>
+            <td>Shares</td>
+            <td>Price</td>
+            <td>TOTAL</td>
+        </tr>
+        {% for item in capital %}
+        {% if item["shares"] != 0 %}
+        <tr>
+            <td>{{item["symbol"]}}</td>
+            <td>{{item["name"]}}</td>
+            <td>{{item["shares"]}}</td>
+            <td>{{item["price"]}}</td>
+            <td>{{item["total"]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        <td>CASH</td>
+        <td colspan="3"></td>
+        <td>{{cash}}</td>
+        <tr>
+            <td colspan="4"></td>
+            <td id="bold">{{total2}}</td>
+        </tr>
+    </table>
+{% endblock %}

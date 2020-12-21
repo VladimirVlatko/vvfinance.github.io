@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" font-weight: bold;>
+        <tr id="bold">
+            <td>Symbol</td>
+            <td>Shares</td>
+            <td>Price</td>
+            <td>Transacted</td>
+        </tr>
+        {% for item in capital %}
+        <tr>
+            <td>{{item["symbol"]}}</td>
+            <td>{{item["shares"]}}</td>
+            <td>{{item["price"]}}</td>
+            <td>{{item["time"]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
